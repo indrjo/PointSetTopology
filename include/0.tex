@@ -1,0 +1,63 @@
+% !TEX program = lualatex
+% !TEX root = ../topology.tex
+% !TEX spellcheck = en_GB
+
+\section{Elements of Set Theory}
+
+\subsection{Sets}
+
+We assume you are quite acquainted with Set Theory (at least with the na\"ive version\footnote{Here, \q{na\"ive} stands for \q{non axiomatic} (you may have heard something about ZFC or NBG). For most of our uses the innate idea one has of sets and membership relation is enough.}), which covers {\em sets} and {\em functions} among other things. This section exists only to recall some notations. Given two sets \(X\) and \(Y\), a function \(f\) from \(X\) to \(Y\) is written as \(f : X \to Y\). The expression \(x \in X\) means \(x\) is an element of the set \(X\). \(\nil\) is the empty set, the one who has not any element. \(A \subseteq B\) signifies that every \(x \in A\) is an element of \(B\) too, and there exists the {\em power set} of any set \(X\), viz the set
+\[\wp X \coloneq \set{E \mid E \subseteq X}.\]
+Delimiting your discourse into an environment is a good habit: when we talk about sets, we are tacitly moving inside a {\em universe of discourse}, a large set which contains all the things we need. The notation
+\[\set{x \in U \mid p(x)},\]
+where \(U\) is a prefixed universe of discourse and \(p\) is a predicate, denotes the set of all and only the elements of \(U\) for which \(p(x)\) is true. Inside any universe of discourse one can perform some basic operations:
+\begin{align*}
+& A \cup B \coloneq \set{x \in U \mid x \in A \text{ or } x \in B} \\
+& A \cap B \coloneq \set{x \in U \mid x \in A \text{ and } x \in B}\\
+& A - B \coloneq \set{x \in A \mid x \notin B}.
+\end{align*}
+The expression \((x, y)\) indicates an {\em ordered pair} and the product of two sets gathers ordered pairs: for \(A\) and \(B\) sets
+\[A \times B \coloneq \set{(x, y) \mid x \in A, x \in B}.\]
+
+There exist {\em families} too, that is sets whose elements are themselves sets. Sometimes families may be {\em indexed}, that is labels are attached to distinguish its member: in that case, you already may have met expressions as \(\set{X_i}_{i \in I}\) or \(\set{X_i \mid i \in I}\) before now.\footnote{Formally, an indexed set \(X\) is any surjection \(I \to X\) for some \(I\) which provides \q{indexes}. But what exactly is a index set? For instance, for a family of three sets the set \(\set{\text{do}, \text{re}, \text{mi}}\) fits well. Usually, natural, integers or real numbers are used.}
+
+We want unions and intersections of all the elements of a family to be defined as well: let \(\calE\) be any family of sets coming from an universe of discourse \(U\):
+\begin{align*}
+& \bigcup \calE \coloneq \bigcup_{A \in \calE} A \coloneq \set{x \in U \mid \exists A \in \calE : x \in A} \\
+& \bigcap \calE \coloneq \bigcap_{A \in \calE} A \coloneq \set{x \in U \mid \forall A \in \calE : x \in A}
+\end{align*}
+In particular, \(A \cup B = \bigcup \set{A, B} = \bigcup_{I \in \set{A, B}} I\) and \(A \cap B = \bigcap \set{A, B} = \bigcap_{I \in \set{A, B}} I\). With indexed families it's what you would expect:
+\[\bigcup_{i \in I} A_i \coloneq \set{x \in U \mid \exists i \in I : x \in A_i} \ ,\quad \bigcap_{i \in I} A_i \coloneq \set{x \in U \mid \forall i \in I : x \in A_i}\]
+The following facts are known as the \q{de Morgan's Laws}
+\[X - \bigcup_{I \in \calE} I = \bigcap_{I \in \calE} (X - I) \ , \quad X - \bigcap_{I \in \calE} I = \bigcup_{I \in \calE} (X - I)\]
+
+Another thing deserves to be remarked:
+\[\bigcup_{A \in \calE_1, B \in \calE_2} F(A, B) \quad\text{and}\quad \bigcap_{A \in \calE_1, B \in \calE_2} F(A, B),\]
+where \(F : \wp U \times \wp U \to \wp U\) for some universe \(U\), are useful shorthands for
+\[\bigcup_{A \in \calE_1} \left(\bigcup_{B \in \calE_2} F(A, B)\right) \quad \text{and} \quad \bigcap_{A \in \calE_1} \left(\bigcap_{B \in \calE_2} F(A, B)\right)\]
+respectively.
+
+We have the {\em product} of sets of a family too: given a family \(\set{X_i}_{i \in I}\)
+\[\prod_{i \in I} X_i \coloneq \set{f : I \to \bigcup_{i \in I} X_i \mid f(i) \in X_i}.\]
+When \(\set{X_i}_{i \in I}\) is finite and \(I = \set{1, \dots{}, n}\), the definition is quite simplified
+\[\prod_{i \in I} X_i \coloneq \set{(x_1, \dots{}, x_n) \mid x_i \in X_i \text{ for every } i \in I}.\]
+
+
+\subsection{Functions}
+
+If \(f\) is a function \(X \to Y\), the {\em image} via \(f\) of an \(A \subseteq X\) is the set
+\[fA \coloneq \set{y \in Y \mid \exists x \in A : f(x)=y},\]
+while the {\em preimage} of a \(B \subseteq Y\) via \(f\) the set
+\[f^{-1} B \coloneq \set{x \in X \mid f(x) \in B}.\]
+The preimage of singletons, due to their relevance, have a dedicated name: for \(y \in Y\) the {\em fibre} of \(y\) via \(f\) is the set \(f^{-1}\set{y}\).
+
+The preimage function has a regular behaviour:
+\begin{align*}
+& f^{-1} \bigcup_{I \in \calE} I = \bigcup_{I \in \calE} f^{-1} I \\
+& f^{-1} \bigcap_{I \in \calE} I = \bigcap_{I \in \calE} f^{-1} I.
+\end{align*}
+The image function doesn't: whilst
+\[f \bigcup_{E \in \calE} E = \bigcup_{E \in \calE} f E\]
+is always true, the only thing one can say of \(f\) in combination with \(\bigcap\) in general is
+\[f \bigcap_{E \in \calE} E \subseteq \bigcap_{E \in \calE} f E.\]
+

@@ -1,0 +1,120 @@
+% !TEX program = lualatex
+% !TEX spellcheck = en_GB
+% !TEX root = ../topology.tex
+
+\section{The category of Topological Spaces}
+
+\subsection{Topologies, open/closed sets and base}
+
+Let us start in medias res, by giving a definition which will set up our discourse.
+
+\begin{definition}[Topological spaces]\label{definition:DefTop}
+Given any set \(X\), a {\em topology}\index{topology} for \(X\) is a any collection \(\calO\) of subsets of \(X\) which satisfies:
+\begin{enumerate}
+\item \(\nil, X \in \calO\);
+\item for every \(H \subseteq \calO\) we have \(\bigcup_{A \in H} A \in \calO\);
+\item for every couple \(A, B \in \calO\) also \(A \cap B \in \calO\).
+\end{enumerate}
+A set \(X\) equipped with a topology \(\calO\) for it becomes a {\em topological space}\index{topological space}, its elements are called {\em points} and the elements of \(\calO\) {\em open sets}\index{open set}. 
+\end{definition}
+
+A topological space is nothing of unseen or weird: for every set \(X\) there exists its power-set \(\wp X \coloneq \set{I \mid I \subseteq X}\); consider there is \(\set{\nil, X}\) too. As you may quickly check, both those sets are topologies for \(X\). The former one is the {\em discrete topology} and the latter is the {\em indiscrete topology}.
+
+\begin{example}
+More likely, one is more acquainted with \(\reals\), who is said to have a topological structure since first courses. In fact one is told that inside \(\reals\) there are neighbourhoods of its elements, that is open intervals of the shape \((x_0-\varepsilon, x_0+\varepsilon)\), for some \(\varepsilon >0\). Clearly, we must fix all that, and make precise the claim \q{\(\reals\) has a topological structure} (we will do so later, as soon as we can). In fact the intersection of two neighbourhoods does not need to be a neighbourhood (it may be empty!), and the same holds for unions.
+\end{example}
+
+\begin{definition}[Closed sets]
+For \(X\) topological space, a set \(C \subseteq X\) is said {\em closed}\index{closed set} when \(X-C\) is an open set.
+\end{definition}
+
+\begin{theorem}
+For \(X\) topological space, \(\nil\) and \(X\) are closed sets. Furthermore, given any family \(\mathcal F\) of closed sets, the intersection \(\bigcap_{C \in \mathcal F} C\) is closed and the union of two closed sets is closed.
+\end{theorem}
+
+\begin{proof}
+\(X = X - \nil\), so \(X\) is closed since \(\nil\) is open. Analogously, cause \(\nil = X - X\) and \(X\) is open, \(\nil\) is closed.\newline
+For every \(C \in \mathcal F\), the set \(X - C\) is open. Thus, by definition, the union
+\[\bigcup_{C \in \mathcal F} (X -C) = X - \bigcap_{C \in \mathcal F} C\]
+is open: hence \(\bigcap_{C \in \mathcal F} C\) is closed.\newline
+If \(A, B \subseteq X\) are closed, \(X-A\) and \(X-B\) are open. Again by definition,
+\((X-A) \cap (X-B) = X - A \cup B\)
+is open; that is \(A \cup B\) is closed.
+\end{proof}
+
+At this point, there is an important remark. A topological space is closed under the union of any collection of open sets; since we did not apply restrictions, such collections of open sets may be finite or infinite. Instead, we explicitly want a topological space to be closed under {\em binary} intersections (by induction, it is closed under finite intersection). To be honest, we don't care whether an intersection of an infinite amount of open sets is open or not.
+
+Also, observe that saying what exactly are the closed sets in a topological space \(X\) thoroughly determines it. In fact, if you provide a family \(\calC\) which gathers precisely all its closed sets, then the set \(\calO \coloneq \set{X - A \mid A \in \calC}\) is a topology for \(X\). That is you have two manners to define topological space: you can say what is \q{open} or what is \q{closed}.
+
+Actually, there is another way to give a complete description of a topological space: providing a base.
+
+\begin{definition}\label{definition:DefBase}
+Let \(X\) be a topological space. A {\em base}\index{base} of \(X\) is any collection \(\calB\) of its own open made as follows: for every open set \(A\) of \(X\) there exists a \(B \subseteq \calB\) such that
+\[A = \bigcup_{E \in B} E\,.\] 
+\end{definition}
+
+The role of a base is clear: in a topological space an open set is exactly an union of sets of a base. The question now is: when a collection of subsets of a given set is a topology. The following lemma has an enormous importance.
+
+\begin{theorem}[Base Lemma]\label{theorem:BaseLemma}
+Let \(X\) be a set, and consider a set \(\calB \subseteq \wp X\) as follows:
+\begin{enumerate}
+\item for every \(x \in X\) there is a \(E \in \calB\) such that \(x \in E\);
+\item for every \(A, B \in \calB\) and for every \(x \in A \cap B\) there exists \(C \in \calB\) such that \(x \in C \subseteq A \cap B\).
+%\item \(X = \bigcup_{E \in \calB} E\);
+%\item for every \(A, B \in \calB\) there exists a \(H \subseteq \calB\) such that \(A \cap B = \bigcup_{E \in H} E\).
+\end{enumerate}
+Hence the family
+\[\calO \coloneq \set{E \subseteq X \mid \exists B \subseteq \calB : E = \bigcup_{I \in B} I}\]
+is the unique topology for \(X\) with base \(\calB\).
+\end{theorem}
+
+\begin{proof}
+We have to verify the three axioms of the definition~\ref{definition:DefTop} are satisfied.\newline
+By definition of \(\calO\) himself, \(\nil\) is an element of \(\calO\).\newline
+(1) is equivalent to
+\[X = \bigcup_{E \in \calB} E\,,\]
+so \(X \in \calO\) too.\newline
+Consider now any \(\calS \subseteq \calO\) and we ask ourselves whether \(\bigcup_{E \in \calS} E \in \calO\) or not. By how \(\calO\) is made, there is an \(F(E) \subseteq \calB\), for \(E \in \calS\), such that \(E = \bigcup_{I \in F(E)} I\). Thus we have
+\[\bigcup_{E \in \calS} E = \bigcup_{E \in \calS} \left(\bigcup_{I \in F(E)} I\right) = \bigcup_{I \in \bigcup_{E \in \calS} F(E)} I\]
+which lies in \(\calO\), since it is regarded as an union of elements of \(\calB\).\newline
+Let \(A, B \in \calO\) and study \(A \cap B\). Either of them can be rewritten as unions of elements of \(\calB\):
+\[A = \bigcup_{I \in H_1} I \,, \ \ B = \bigcup_{J \in H_2} J\]
+for some \(H_1, H_2 \subseteq \calB\). Then
+\[A \cap B = \bigcup_{I \in H_1} \left(\bigcup_{J \in H_2} I \cap J\right)\,.\]
+The condition (2) says that the intersection of two any \(A, B \in \calB\) is a suitable union of elements of \(\calB\). Take \(F(I, J) \subseteq \calB\) such that \(I \cap J = \bigcup_{E \in F(I, J)} E\), and so
+\[A \cap B = \bigcup_{I \in H_1} \left( \bigcup_{J \in H_2} \left( \bigcup_{E \in F(I, J)} E \right) \right) = \bigcup_{E \in \bigcup_{I \in H_1} \bigcup_{J \in H_2} F(I, J)} E\,:\]
+we can conclude that \(A \cap B \in \calO\), because \(A \cap B\) is written as union of elements of \(\calB\).
+\end{proof}
+
+\begin{example}[\(\reals^n\) with Euclidean topology]
+This example explains in which sense \(\reals\), or in general \(\reals^n\), has topological structure. A \(n\)-dimensional {\em ball} or {\em sphere} with centre \(x_0 \in \reals^n\) and radius \(r \in \reals, r>0\) is the set
+\[B(x_0, r) \coloneq \set{x \in \reals^n \mid \norm{x-x_0} < r}\,.\]
+The family \(\set{B(x, r) \mid x \in \reals^n, r>0}\) is a base for a topology over \(\reals^n\), as you can easily show. This topology, the {\em Euclidean topology}, is the one the entire Analysis is developed upon.
+\end{example}
+
+\begin{theorem}[Equivalent bases]
+Let \(X\) be a set with topologies \(\calO_1\) and \(\calO_2\). If they have respectively \(\calB_1\) and \(\calB_2\) as bases and if:
+\begin{enumerate}
+\item for every \(B_1 \in \calB_1\) and for every \(x \in B_1\) there is a \(B_2 \in \calB_2\) such that \(x \in B_2 \subseteq B_1\) and
+\item for every \(B_2 \in \calB_2\) and for every \(x \in B_2\) there is a \(B_1 \in \calB_1\) such that \(x \in B_1 \subseteq B_2\)
+\end{enumerate}
+then \(\calO_1 = \calO_2\).
+\end{theorem}
+
+\begin{proof}
+(1) says every element of \(\calB_1\) is an union of elements of \(\calB_2\); conversely, (2) states every element of \(\calB_2\) is an union of elements of \(\calB_1\). The proof is quite formal but simple: as exercise, you may fill in with details.
+\end{proof}
+
+\begin{exercise}
+Open intervals (that is those of shape \((a, b)\) for some \(a, b \in \reals\), \(a \le b\)) forms a base for \(\reals\). Show that the family of open boxes
+\[\set{\prod_{k=1}^n I_k \mid I_1, \dots{}, I_n \text{ open intervals of } \reals}\]
+is a base for Euclidean topology over \(\reals^n\), as well.
+\end{exercise}
+
+Since topologies are set of sets, they can be compared in an obvious way.
+
+\begin{definition}[Coarser and finer topologies]
+Given a set \(X\) and two any topologies \(\calO_1\) and \(\calO_2\) over it, when \(\calO_1 \subseteq \calO_2\) we say \(\calO_1\) is {\em coarser}\index{coarser topology} than \(\calO_2\) or, equivalently, \(\calO_2\) is {\em finer}\index{finer topology} than \(\calO_1\). In any case we write \(\calO_2 \finer \calO_1\) or \(\calO_1 \coarser \calO_2\).
+\end{definition}
+
+Note that \(\coarser\) is the relation \(\subseteq\) restricted to topologies for the same set: thus \(\coarser\) is a partially order relation.
