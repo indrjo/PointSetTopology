@@ -1,8 +1,8 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2020.10.3)  4 OCT 2020 20:47
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2020.10.31)  4 NOV 2020 17:42
  restricted system commands enabled.
 **topology.tex
 (./topology.tex
-LaTeX2e <2020-10-01>
+LaTeX2e <2020-10-01> patch level 2
 Lua module: luaotfload-main 2020-09-02 3.15 luaotfload entry point
 Lua module: luaotfload-init 2020-09-02 3.15 luaotfload submodule / initializatio
 n
@@ -76,7 +76,7 @@ Inserting `luaotfload.aux.set_xheight' at position 5 in `luaotfload.patch_font'.
 Lua module: luaotfload-tounicode 2020-09-02 3.15 luaotfload submodule / tounicod
 e
 Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'
-. L3 programming layer <2020-09-24> xparse <2020-03-03> (./structure.tex
+. L3 programming layer <2020-10-27> xparse <2020-03-03> (./structure.tex
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amscls/amsart.cls
 Document Class: amsart 2020/05/29 v2.20.6
 \linespacing=\dimen138
@@ -186,14 +186,14 @@ Package: anyfontsize 2007/11/22 anyfontsize.sty by pts
 (/usr/local/texlive/2020/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2020-09-24 L3 programming layer (loader) 
+Package: expl3 2020-10-27 L3 programming layer (loader) 
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
 File: l3backend-luatex.def 2020-09-24 L3 backend support: PDF output (LuaTeX)
 \l__kernel_color_stack_int=\count191
 \l__pdf_internal_box=\box50
 ))
-Package: xparse 2020-05-15 L3 Experimental document command parser
+Package: xparse 2020-10-27 L3 Experimental document command parser
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.
 tex))
@@ -304,11 +304,11 @@ language=dflt;+tlig;"
 
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/polyglossia/polyglossia.sty
-Package: polyglossia 2020/04/08 v1.49 Modern multilingual typesetting with XeLaT
-eX and LuaLaTeX
+Package: polyglossia 2020/10/15 v1.50a Modern multilingual typesetting with XeLa
+TeX and LuaLaTeX
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2020/08/24 v2.5j e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count270
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/makecmds/makecmds.sty
@@ -326,17 +326,11 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@depth=\count271
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-
 (/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
-))
-(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2020-05-15 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2020-10-27 LaTeX2e option processing using LaTeX3 keys
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/filehook/filehook.sty
 Package: filehook 2020/09/29 v0.8a Hooks for input files
 
@@ -376,6 +370,7 @@ braces):
 >  {latex/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 )
 Package polyglossia Info: Default language is latex.
+Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/polyglossia/gloss-english.ldf
 File: gloss-english.ldf polyglossia: module for english
@@ -417,12 +412,12 @@ Package polyglossia Info: Option: English, variant=american.
 )
 Package polyglossia Info: Option: English, variant=british.
 Module polyglossia Info: Language data for ukenglish
-(polyglossia)            patterns	hyph-en-gb.pat.txt
-(polyglossia)            loader	loadhyph-en-gb.tex
-(polyglossia)            righthyphenmin	3
 (polyglossia)            hyphenation	hyph-en-gb.hyp.txt
-(polyglossia)            synonyms	british,UKenglish
-(polyglossia)            lefthyphenmin	2 on input line 15
+(polyglossia)            loader	loadhyph-en-gb.tex
+(polyglossia)            patterns	hyph-en-gb.pat.txt
+(polyglossia)            lefthyphenmin	2
+(polyglossia)            righthyphenmin	3
+(polyglossia)            synonyms	british,UKenglish on input line 15
 Module polyglossia Info: Language ukenglish was not yet loaded; created with id 
 2 on input line 15
 Package polyglossia Info: Option: English, variant=british.
@@ -511,7 +506,7 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen154
 \Hy@linkcounter=\count281
@@ -608,6 +603,12 @@ Package hyperref Info: Option `breaklinks' set `true' on input line 27.
 Package: imakeidx 2016/10/15 v1.3e Package for typesetting indices in a synchron
 ous mode
 
+(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \c@tracingmulticols=\count291
@@ -959,7 +960,10 @@ LaTeX Info: Redefining \rmfamily on input line 19.
 LaTeX Info: Redefining \sffamily on input line 19.
 LaTeX Info: Redefining \ttfamily on input line 19.
 luaotfload | aux : font no 38 (nil) defines no feature for script latn with lang
-uage eng)
+uage eng
+Package polyglossia Info: Option: English, variant=british.
+Package polyglossia Info: Option: English, variant=british.
+)
 \openout1 = topology.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -1072,7 +1076,7 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 Package graphics Info: Driver file: luatex.def on input line 105.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-def/luatex.def
-File: luatex.def 2020/08/26 v1.2 Graphics/color driver for luatex
+File: luatex.def 2020/10/05 v1.2a Graphics/color driver for luatex
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1107,6 +1111,9 @@ LaTeX Info: Redefining \sffamily on input line 15.
 LaTeX Info: Redefining \ttfamily on input line 15.
 luaotfload | aux : font no 38 (nil) defines no feature for script latn with lang
 uage eng
+Package polyglossia Info: Option: English, variant=british.
+Package polyglossia Info: Option: English, variant=british.
+
 (./topology.toc
 Package polyglossia Info: Option: English, variant=british.
 Package polyglossia Info: Option: English, variant=british.
@@ -1114,7 +1121,10 @@ LaTeX Info: Redefining \rmfamily on input line 1.
 LaTeX Info: Redefining \sffamily on input line 1.
 LaTeX Info: Redefining \ttfamily on input line 1.
 luaotfload | aux : font no 38 (nil) defines no feature for script latn with lang
-uage eng)
+uage eng
+Package polyglossia Info: Option: English, variant=british.
+Package polyglossia Info: Option: English, variant=british.
+)
 \tf@toc=\write5
 
 \openout5 = topology.toc
@@ -1170,21 +1180,24 @@ LaTeX Info: Redefining \rmfamily on input line 19.
 LaTeX Info: Redefining \sffamily on input line 19.
 LaTeX Info: Redefining \ttfamily on input line 19.
 luaotfload | aux : font no 38 (nil) defines no feature for script latn with lang
-uage eng)
+uage eng
+Package polyglossia Info: Option: English, variant=british.
+Package polyglossia Info: Option: English, variant=british.
+)
 Package rerunfilecheck Info: File `topology.out' has not changed.
-(rerunfilecheck)             Checksum: 7829CBD742E0E4D0F832ADD1D75F56BA;1009.
+(rerunfilecheck)             Checksum: 4ADCBC308B91DD8067D80607BB54F038;1009.
 )
 
 Here is how much of LuaTeX's memory you used:
- 20702 strings out of 479058
+ 20718 strings out of 479005
  125081,794899 words of node,token memory allocated
- 679 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 33 attribute, 63 glue_spec
-, 33 attribute_list, 1 write nodes
-   avail lists: 1:1,2:474,3:215,4:37,5:544,6:43,7:5252,8:54,9:578,10:7,11:239
- 39280 multiletter control sequences out of 65536+600000
+ 683 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 34 attribute, 63 glue_spec
+, 34 attribute_list, 1 write nodes
+   avail lists: 1:1,2:464,3:214,4:40,5:541,6:43,7:5483,8:54,9:582,10:7,11:242
+ 39348 multiletter control sequences out of 65536+600000
  124 fonts using 18134787 bytes
- 75i,11n,121p,886b,658s stack positions out of 5000i,500n,10000p,200000b,200000s
+ 83i,11n,121p,886b,658s stack positions out of 5000i,500n,10000p,200000b,200000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr
 /local/texlive/2020/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{/usr/loca
 l/texlive/2020/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/local/tex
@@ -1205,10 +1218,10 @@ y6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
 10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/m
 sbm10.pfb>
-Output written on topology.pdf (7 pages, 272018 bytes).
+Output written on topology.pdf (7 pages, 272800 bytes).
 
-PDF statistics: 189 PDF objects out of 1000 (max. 8388607)
- 159 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 131072)
+PDF statistics: 192 PDF objects out of 1000 (max. 8388607)
+ 162 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 131072)
  49 words of extra memory for PDF output out of 10000 (max. 100000000)
 

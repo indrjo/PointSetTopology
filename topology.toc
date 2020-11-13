@@ -2,6 +2,6 @@
 \contentsline {section}{\tocsection {}{0}{Elements of Set Theory}}{1}{section.0}%
 \contentsline {subsection}{\tocsubsection {}{0.1}{Sets}}{1}{subsection.0.1}%
 \contentsline {subsection}{\tocsubsection {}{0.2}{Functions}}{3}{subsection.0.2}%
-\contentsline {section}{\tocsection {}{1}{The category of Topological Spaces}}{3}{section.1}%
+\contentsline {section}{\tocsection {}{1}{The Category of Topological Spaces}}{3}{section.1}%
 \contentsline {subsection}{\tocsubsection {}{1.1}{Topologies, open/closed sets and base}}{3}{subsection.1.1}%
 \contentsline {section}{\tocsection {}{}{Index}}{7}{section*.2}%
